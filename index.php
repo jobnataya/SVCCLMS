@@ -19,7 +19,7 @@
     <div class="article">
         <div class="leftside">
         <div class="login">
-            <form action="">
+            <form  method="POST">
                 <label for="Name">Name:</label>
                 <input class="name" type="text" id="name" placeholder="User Name:">
                 <br>
@@ -30,7 +30,7 @@
                 <input class="slogin" type="submit" id="submit" value="Log in">
             </form>
             <br>
-            <a href="signup.html" class="buttonc">Create New Account</a>
+            <a href="signup.php" class="buttonc">Create New Account</a>
         </div>
         </div>
     </div>
