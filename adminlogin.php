@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="CSS/indexstyle.css">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="CSS/loginadmin.css">
 </head>
 <?php
 session_start();
@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
     if (!empty($fname) && !empty($password)) 
     {
-        $query = "SELECT * FROM svccinfo WHERE name = '$fname' LIMIT 1 ";
+        $query = "SELECT * FROM admininfo WHERE name = '$fname' LIMIT 1 ";
         $result = mysqli_query($conn, $query);
 
         if($result)
@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
                 if ($user_data['password'] == $password) 
                 {
-                    header("Location: home.php");
+                    header("Location: homeadmin.php");
                     die;
                 }
             }
@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     <div class="article">
         <div class="leftside">
         <div class="login">
-        <h1>User</h1>
+            <h1>Admin</h1>
             <form  method="POST">
                 <label for="Name">Name:</label>
                 <input class="name" type="text" id="name" placeholder="User Name:" name="fname" >
@@ -65,12 +65,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 <input class="slogin" type="submit" id="submit" value="Log in">
             </form>
             <br>
-            <a href="signup.php" class="buttonc">Create New Account</a>
-            <a href="adminlogin.php" class="buttona">ADMIN</a>
+            <a href="index.php" class="buttona">USER</a>
         </div>
+        </div>
+        <div class="rightside">
+            <img class=grid-item src="images/1.jpg" alt="">
+            <img class=grid-item  src="images/2.webp" alt="">
+            <img class=grid-item  src="images/3.jpg" alt="">
+            <img class=grid-item  src="images/4.webp" alt="">
         </div>
     </div>
     <div class="footer"></div>
-    
 </body>
 </html>
